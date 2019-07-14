@@ -1,0 +1,5 @@
+#PEP - Python Python Enhancement Proposals
+    PEP20- Zen of python
+    PEP8- Style Guide for Python Code
+    In REPL -- import this - gives zen of pyhton.
+

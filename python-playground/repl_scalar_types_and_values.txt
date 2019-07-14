@@ -1,0 +1,44 @@
+#int   - arbitrary precision integer
+#float - 64-bit floating point numbers
+#None  - the null object
+#bool (True/False) - Boolean logical values
+
+# we can construct binary, octal, hexadecimal number from  integer decimal form
+
+>>> 0b10
+2
+>>> 0o10
+8
+>>> 0x10
+16
+
+# conversion between datatypes
+
+>>> int(3.5)
+3
+>>> int(-3.5)
+-3
+>>> int("8")
+8
+>>> int("-8")
+-8
+>>> 3e8
+300000000.0
+>>> 1.616e-35
+1.616e-35
+>>> float("nan")   #not a number
+nan
+>>> float("inf")   #positive infinity
+inf
+>>> float("-inf")  #negative infinity
+-inf
+>>> 3.0+1
+4.0
+>>> None
+>>> a = None
+>>> a
+>>> a is None
+True
+
+
+
