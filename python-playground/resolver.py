@@ -5,6 +5,7 @@ class Resolver:
 
     def __init__(self):
         self._cache={}
+        print('Cache is set')
 
     def __call__(self,host):
         if host not in self._cache:
@@ -18,5 +19,16 @@ class Resolver:
 
     def clear(self):
         self._cache.clear()
+        
+    def printMe(str):
+        """This is a docstring, used for documenting. help(resolver to see the document)
+        
+        Args:
+            str: Any string which you want to print.
+        """
+        print(str)
 
-
+    #print(__name__)
+    
+    if __name__ == '__main__':
+        printMe('this is life')
