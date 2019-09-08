@@ -1,0 +1,34 @@
+- Python code is placed in *.py files called modules
+
+- Modules can be executed directly with :
+		py module_name.py
+		
+- Modules can be imported in the REPL or in other module using:
+		import module_name
+		
+- Named Functions are defined with the def keyword, eg:
+		def function_name(arg1,argn):
+		
+- Return statement from function is optional.
+
+- Default return is None.
+
+- Use __name__ to determine how the module is being executed.(directly py or by importing)
+
+- if __name__=='__main__' then the module is being executed.
+
+- Module code is executed exactly once, on first import
+
+- Command line arguments are accesible through sys.argv
+
+- sys.argv[0] is the filename.
+
+- Docstrings are the standalone literal string as the first statement of a function or module.
+
+- Docstring are delimited by triple quotes.
+
+- Docstring provide help(module_name)
+
+- Comments begin with #.
+
+- A special comment on the first line beginning #! controls module execution by the program loader/intepreter.
