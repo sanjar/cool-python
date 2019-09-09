@@ -1,0 +1,42 @@
+Objects in Python
+
+- Named reference to objects rather than variables
+	* Assignment attaches a name to an object
+	* Assigning from one reference to another puts two name tags on the same object.
+
+- Garbage collector reclaims unreachable objects.
+
+- 'id()' returns a unique and constant identifier
+
+- 'is' operator determines equality of identity (same id)
+
+- '==' is used for equality check
+
+- Function arguments are passed by object reference.
+
+- Reference is lost if function argument is reassigned to other object.
+
+- 'retun' also passes by object reference.
+
+- Function arguments can be specified with defaults.
+
+- Default argument expressions evaluated once when def is executed.
+
+- Python uses dynamic and strong typing.
+
+- Names are looked  up in four nested scopes
+	LEGB rule: Local , Enclosing , Global and Built-ins
+	
+- Use global to assign to global references from a local scope.
+
+- 'type' can be used to determine the type of an object.
+
+- 'dir()' is used to get details of an object and its attributes.
+
+- '__name__' attribute gives name of function or module object.
+
+- '__doc__' attribute gives docstring for a funtion or module object
+
+- 'len()' is used to measure the length of a string.
+
+- 'repetition' operation-> multiply a string by an integer.
