@@ -1,0 +1,147 @@
+Collections in python
+
+-- Tuple
+	- hetrogeneous immutable sequence.
+	- delimited by parantheses.
+	- Items seperated by commas.
+	- Element access with square brackets and zero based index t[index].
+	- len(t) for number of elements.
+	- Iteration with for loop.
+	- Concatination with + operator.
+	- Repetition with * operator.
+	- nested tuples possible. ((3,2),(5,2),(5,1))
+	- Can't use one object in parantheses as single element tuple. t = (3), is allowed, but its not tuple, its int.
+	- For a single element tuple include a trailing comma. eg : t=(3,).
+	- The empty tuple is simply empty parentheses. eg: t = ().
+	- Delimiting parantheses are optional for one or more elements. t = 3,4 2,6,9
+	- Tuples are useful for multiple return values.
+	- Tuple unpacking allows us to destructure directly into named references.
+	- Tuple unpacking works with arbitrarily nested tuples(although not with other data structure)
+		eg: (a,(b,(c,d))) = (3,(4,(8,3)))
+	- a,b = b,a is the idiomatic swap.
+	- use the tuple(iterable) constructor to create tuples from other iterable series of objects.
+		eg: tuple([2,43,5,3,23])
+			tuple("its is tuple") -- > ('i', 't', 's', ' ', 'i', 's', ' ', 't', 'u', 'p', 'l', 'e')
+​	- The 'in' and 'not in' operators can be used  with  tuples and other collection types for membership testing.
+		eg: 5 in (4,3,3,4,5,2,1) or 8 not in (4,3,3,4,5,2,1)
+		
+-- String (str)
+	- homogenous immutable sequence of Unicode codepoints (Characters)
+	- len(s) gives length
+	- '+' or '+=' can be used for concatination
+	- join(s1,s2,....sn) is best way to concatination.
+		eg : "".join(["ye","ah"])--> 'yeah'
+			 ";".join(["ye","ah"])--> 'ye;ah'
+			 
+	- split(sperator)  is used to split.
+		eg: 'ye;ah'.split(';') --> ['ye','ah']
+	- without arguments, split divides on whitespaces.
+		eg: 'asfgafsdgafg dfga afsg asfg asfg'.split() --> ['asfgafsdgafg', 'dfga', 'afsg', 'asfg', 'asfg']
+	- The partition() method divides a string into 3 around a separator: prefix, separator,suffix
+		eg: "unpunishable".partition('punish') --> ('un', 'punish', 'able')
+	- String unpacking can be used in partition method.
+		eg : hour, colon, minute = "06:45".partition(':')
+	- '_' use underscore as a dummy name for separator
+		eg: hour, _, minute = "06:45".partition(':')
+	- use format() to insert values into string.
+		eg: "My name is {0}. I am an {1}. I am proud to be {1}.".format('Sadique','Engineer')
+	- Field names in {} can be omited if used in sequence.
+		eg: "This is {} and that is {}".format('good','bad')
+	- field naming can be used in {} for formating.
+		eg: "Current position: {long} {lat}".format(long='60N',lat='5E')
+	- tuple can be used to index values in format:
+		eg: "This is an example for sequence: {pos[0]},{pos[1]},{pos[2]},{pos[3]}".format(pos=t) --> 'This is an example for sequence: 1,2,3,4'
+	- Access attributes using dot in the replacement filed in format()
+		eg: "Math constants: pi = {m.pi}, e = {m.e}".format(m = math) --> 'Math constants: pi = 3.141592653589793, e = 2.718281828459045'
+
+-- Range
+	- arthemetic progression of integers. range(start,stop,step)
+	- stop value is 1 more than it.
+		eg: range(5) --> range(0,5) ie: 0,1,2,3,4
+	- range values can be used to convert to list.
+		eg: list(range(2,6)) --> [2, 3, 4, 5]
+	- optional 3rd step value
+		eg: list(range(2,8,2)) --> [2,4,6]
+	- use enumerate to get index and its value.
+		eg: t = [2,5,8,2,2,4,6]
+			for p in enumerate(t):
+				print(p)
+		Ans: (0, 2)
+			 (1, 5)
+			 (2, 8)
+			 (3, 2)
+			 (4, 2)
+			 (5, 4)
+			 (6, 6)
+
+-- list
+	- hetrogeneous mutable sequence
+	- Negative integers index from end. Last element is at index -1
+	- Slicing extracts part of list. slice = s[start:end]. start is included,while end not.
+	- Slicing works with negative indexes.
+	- start and end index is optional, provide any one. eg: s[1:], s[:3]
+	- A full slice = Omitting start and end index slices form begining to end. s[:]
+	- Good way to copy list. eg : new_lst = s[:]
+	- List copying ways: Full slice, copy method, list constructor.
+	- These all copying techniques are shallow copying
+	- Repeat list using * operator. Repetition is shallow.
+	-  index(item) returns the integer index of the first equivalent  element. if not found gives ValueError.
+	- count(item) returns the number of matching elements.
+	- 'in' and 'not in' is used for membership.
+	- 'del s[index]' to remove by index.
+	- s.remove(item) to remove by value. throws 'ValueError' if not found.
+	- Insert the items with 's.insert(index,item)'
+	- concatinate list with + operator.
+	- In place extension can be done using += or extend method.
+	- list can be reversed using reverse() method. list.reverse()
+	- list can be sorted using sort(). list.sort(), it can take an argument called reverse, if True, returns decending order.
+	- sort method takes 'key' as argument, which expects a function for defining the sorting logic. this function should be in item object
+		e.g: list.sort(key=len) --> sorts element depending on the length of the items. This would give error for int list as len method is not there in int.
+	- sorted() is a built-in function which sorts any iterable series and returns a list.
+		eg: y = sorted(x)
+	- reversed is a built-in function which reverses the iterable items.
+		eg: y = reversed(x)
+	
+-- dict
+	- unordered mapping from unique, immutable keys to mutable values.
+	- dict is delimited by { and }. comma seperated 'key:value' pairs. key should be unique.
+	- key in dict must be immutable and values can be mutable. Ordering is not relaiable.
+	- dict() constructor accepts:
+			* iterable series of key-value 2-tuples.
+				eg: name_ages = [("jack", 10),("Rony", 45),("bala",34),("Huge",39)]
+					d = dict(name_ages)
+					output = {'jack': 10, 'Rony': 45, 'bala': 34, 'Huge': 39}
+			* keyword arguments - eg: val = dict(a="one", b = "two", c ="three") outputs - > {'a': 'one', 'b': 'two', 'c': 'three'}
+	- dict copying
+			* d.copy()
+			* dict(d)
+	- update() function can be used to update an existing dict. eg: f.update(g)
+	- Iteration is over keys. to get value: v[key]. Order is arbitrary.
+	- Use 'values()' for iterable view onto the series of values.
+	- No efficient way to get they key from the corresponding value.
+	- Use 'items()' for iterable view onto the series of key-value tuples.
+	- The 'in' and 'not in' operators work on keys.
+	- Use 'del' keyword to remove by key. eg : del d[key]. KeyError if key not found.
+
+-- set
+	- unordered collection of unique , immutable objects
+	- delimted by { and }, single comma seperated items.
+	- empty {} makes a dict, so for empty set use set constructor. eg d = set().
+	- set constructor accepts:
+			* iterable series of values. eg s= set([1,3,4,45,5])
+			* duplicates are discarded.
+			* no order preserving.
+	- sets are iterable, order is arbitrary.
+	- 'in' and 'not in' works in sets.
+	- add(item) inserts a single element.
+	- for multiple elements to be added , use update(items). items is any iterable series.
+	- 'remove(item)' to remove item, gives KeyError if not found.
+	- 'discard(item)' also removes item, but no side effects if item is not found.
+	- 's.copy()' and constructor set(s) to create a copy of set.
+	- 's.union(t)' to combine to set.
+	- 's.intersection(t)' to get common fields.
+	- 's.difference(t)' to get if one set doesnot have given set.
+	- 's.symmetric_difference(t)' to get all which in not common
+	- 's.issubset(t)' to get if all are contained in given set.
+	- 's.issuperset(t)' just opposite of issubset.
+	- 's.isdisjoint(t)' to check if nothing is in common.
